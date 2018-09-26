@@ -1,0 +1,20 @@
+option java_package = "com.chinamobile.cmss.pinpoint.hbase";
+option java_outer_classname = "PinPointTraceInfoProtos";
+option java_generate_equals_and_hash = true;
+option optimize_for = SPEED;
+
+/**
+   * Content of the '/hbase/hbaseid', cluster id, znode.
+    * Also cluster of the ${HBASE_ROOTDIR}/hbase.id file.
+     */
+message PinPointTraceInfo {
+	optional string pinpoint_trace_id = 101;
+	optional int64 pinpoint_span_id = 102;
+	optional int64 pinpoint_parent_span_id = 103;
+	required bool pinpoint_sampled = 104;
+	optional int32 pinpoint_flags = 105;
+	optional string pinpoint_parent_application_name = 106;
+	optional int32 pinpoint_parent_application_type = 107;
+	optional string pinpoint_host = 108;
+}
+
